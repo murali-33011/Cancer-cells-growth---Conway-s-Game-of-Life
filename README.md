@@ -10,9 +10,9 @@ A **multi-state cellular automaton** that models tumor evolution in living tissu
 
 ---
 
-## ✨ Features
+## Features
 
-### 🧬 Multi-State Cellular Automaton
+###  Multi-State Cellular Automaton
 Five distinct cell states replace the binary alive/dead of classic Conway's Game of Life:
 
 | State | Color | Description |
@@ -23,29 +23,29 @@ Five distinct cell states replace the binary alive/dead of classic Conway's Game
 | **Resistant Cancer** | 🟣 Magenta | Drug-resistant mutants that survive therapy |
 | **Necrotic Core** | ⬜ Gray | Dead tissue formed at the tumor's overcrowded center |
 
-### 🔁 Biologically-Inspired Rules
+### Biologically-Inspired Rules
 - **Healthy cells** survive via homeostasis (2–4 healthy neighbours) and die when overwhelmed by ≥3 cancer-cell neighbours.
 - **Cancer cells** are born from empty cells with ≥3 cancer neighbours, survive under broader conditions, and collapse into a necrotic core when overly dense (≥7 cancer/necrotic neighbours).
 - **Necrotic cells** decay stochastically (~8% chance per generation) back to empty space.
 - **Resistant cells** arise via random mutation during cancer cell birth or invasion, at a tunable rate.
 
-### 🎛️ Interactive Controls
+### Interactive Controls
 - **Play / Pause / Step** : run the simulation continuously or advance one generation at a time.
 - **Speed Slider** : adjust simulation speed from 10 ms to 500 ms per step.
 - **Reset** : restart the current scenario from scratch.
 
-### ⚙️ Live Parameter Tuning
+### Live Parameter Tuning
 Adjust key biological parameters mid-simulation using sliders:
 - **Mutation Rate** (0–15%) : probability that a new cancer cell becomes drug-resistant.
 - **Cancer Birth Threshold** (1–6 neighbours) : how aggressive cancer spread is.
 - **Overpopulation Threshold** (3–8 neighbours) : tolerance before necrosis sets in.
 
-### 💊 Therapy Simulation
+### Therapy Simulation
 Apply treatments at any point in the simulation:
 - **Chemotherapy** : kills ~70% of cancer cells but spares resistant mutants; causes ~15% collateral healthy cell damage.
 - **Radiotherapy** : higher efficacy (~80%) against cancer, but greater damage to healthy tissue (~25%).
 
-### 🎬 Simulation Presets
+### Simulation Presets
 Three ready-to-run biological scenarios:
 
 | Preset | Description |
@@ -54,21 +54,21 @@ Three ready-to-run biological scenarios:
 | **Therapy & Relapse** | An established tumor with a necrotic core and seeded resistant cells, ready for therapy. Apply chemo and watch resistant cells repopulate. |
 | **Competitive Dynamics** | Healthy tissue (left) vs. a cancer blob (right) competing for space. |
 
-### 📊 Real-Time Visualizations
+### Real-Time Visualizations
 Three synchronized views update every generation:
 
 1. **Tumor Evolution Grid** : 80×80 cell canvas with color-coded cell states.
 2. **Cell Population Chart** : live line chart tracking healthy, cancer, resistant, and necrotic cell counts over time.
 3. **Population Fraction (Stacked Area)** : normalized view showing the shifting balance of the entire grid at a glance.
 
-### 📈 Live Statistics Panel
+### Live Statistics Panel
 - Per-type cell counts (Healthy, Cancer, Resistant, Necrotic)
 - **Tumor diameter** estimate in cell units (computed from bounding radius of all tumor cells)
 - **5-generation growth rate** : rolling delta of total cancerous cells
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -90,7 +90,7 @@ python cancer_simulation.py
 
 ---
 
-## 🖥️ Interface Overview
+## Interface Overview
 
 ```
 ┌──────────────────────────────────────────────────┬──────────────────┐
@@ -105,7 +105,7 @@ python cancer_simulation.py
 
 ---
 
-## 🧪 How It Works
+## How It Works
 
 The simulation engine (`CancerAutomaton`) applies transition rules simultaneously to all cells each generation using vectorized NumPy operations : no per-cell Python loops. Neighbour counts for each state are computed using 8-directional manual convolution on boolean masks, keeping each step fast even at 80×80 resolution.
 
@@ -116,7 +116,7 @@ Key computational methods:
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 cancer_simulation.py
@@ -133,7 +133,7 @@ cancer_simulation.py
 
 ---
 
-## 🔭 Potential Extensions
+## Potential Extensions
 
 - Export simulation frames as GIF or video
 - Add targeted therapy that also kills resistant cells (at higher cost)
@@ -143,6 +143,6 @@ cancer_simulation.py
 
 ---
 
-## 📄 License
+## License
 
 MIT License. See `LICENSE` for details.
